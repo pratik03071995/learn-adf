@@ -1,0 +1,34 @@
+{
+	"name": "run_mynotebook",
+	"properties": {
+		"activities": [
+			{
+				"name": "Notebook1",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Repos/surbhipeshwe1708@outlook.com/learn-databricks/test",
+					"baseParameters": {
+						"Date": "2024-03-28",
+						"BaseFolderPath": "/mnt/raw/API_DATA/MAJESCO_PAS/POLICY/XML/myfile/",
+						"Load_Folder": "yes",
+						"Nodes": "QuotePolicy,CommissionList"
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureDatabricks1",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"annotations": []
+	}
+}
