@@ -18,7 +18,11 @@
 							"description": "it is not policy",
 							"type": "Fail",
 							"dependsOn": [],
-							"userProperties": []
+							"userProperties": [],
+							"typeProperties": {
+								"message": "it is not policy",
+								"errorCode": "101"
+							}
 						}
 					],
 					"ifTrueActivities": [
