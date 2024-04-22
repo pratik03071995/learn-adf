@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "If Condition1",
+				"name": "check rec type",
 				"type": "IfCondition",
 				"dependsOn": [],
 				"userProperties": [],
@@ -54,7 +54,7 @@
 				"type": "IfCondition",
 				"dependsOn": [
 					{
-						"activity": "If Condition1",
+						"activity": "check rec type",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -68,7 +68,7 @@
 					},
 					"ifFalseActivities": [
 						{
-							"name": "send email",
+							"name": "send email fail",
 							"description": "send email failure ",
 							"type": "SetVariable",
 							"dependsOn": [],
