@@ -12,6 +12,15 @@
 						"value": "@equals(pipeline().parameters.rec_type,'policy')",
 						"type": "Expression"
 					},
+					"ifFalseActivities": [
+						{
+							"name": "Not rec type",
+							"description": "it is not policy",
+							"type": "Fail",
+							"dependsOn": [],
+							"userProperties": []
+						}
+					],
 					"ifTrueActivities": [
 						{
 							"name": "Notebook2",
