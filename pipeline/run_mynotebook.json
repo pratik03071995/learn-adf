@@ -53,8 +53,34 @@
 						"rec_type": "mine"
 					}
 				}
+			},
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "Execute Pipeline1",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "run",
+					"value": "pass"
+				}
 			}
 		],
+		"variables": {
+			"run": {
+				"type": "String"
+			}
+		},
 		"annotations": []
 	}
 }
