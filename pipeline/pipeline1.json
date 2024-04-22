@@ -104,7 +104,8 @@
 		],
 		"parameters": {
 			"rec_type": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "policy"
 			}
 		},
 		"variables": {
