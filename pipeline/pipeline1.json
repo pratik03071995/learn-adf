@@ -48,11 +48,74 @@
 						}
 					]
 				}
+			},
+			{
+				"name": "send email",
+				"type": "IfCondition",
+				"dependsOn": [
+					{
+						"activity": "If Condition1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"expression": {
+						"value": "@equals(activity('Notebook2').output.exitValue, 'completed')\n",
+						"type": "Expression"
+					},
+					"ifFalseActivities": [
+						{
+							"name": "send email",
+							"description": "send email failure ",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "email failure",
+								"value": "validation failed"
+							}
+						}
+					],
+					"ifTrueActivities": [
+						{
+							"name": "send email success",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "send email",
+								"value": "success"
+							}
+						}
+					]
+				}
 			}
 		],
 		"parameters": {
 			"rec_type": {
 				"type": "string"
+			}
+		},
+		"variables": {
+			"run": {
+				"type": "String"
+			},
+			"send email": {
+				"type": "String"
+			},
+			"email failure": {
+				"type": "String"
 			}
 		},
 		"annotations": []
