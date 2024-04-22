@@ -48,10 +48,7 @@
 						"referenceName": "pipeline1",
 						"type": "PipelineReference"
 					},
-					"waitOnCompletion": true,
-					"parameters": {
-						"rec_type": "mine"
-					}
+					"waitOnCompletion": true
 				}
 			}
 		],
